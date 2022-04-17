@@ -110,7 +110,7 @@ export default function Home() {
     try {
       const provider = await getProviderOrSigner();
       const nftContract = new Contract(NFT_CONTRACT_ADDRESS, abi, provider);
-      const owner = await nftContract.owner();
+      const _owner = await nftContract.owner();
       const signer = await getProviderOrSigner(true);
       const address = await signer.getAddress();
       if (address.toLowerCase() === _owner.toLowerCase()) {
